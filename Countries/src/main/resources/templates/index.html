@@ -5,7 +5,7 @@
 <script type="text/javascript"
 	src="webjars/jquery/3.3.1-2/jquery.min.js"></script>
 <script type="text/javascript"
-	src="webjars/bootstrap/4.3.1/js/bpptstrap.min.js"></script>
+	src="webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 <link rel="stylesheet"
 	href="webjars/bootstrap/4.3.1/css/bootstrap.min.css" />
 
@@ -37,7 +37,8 @@
 			<ul class="nav nav-pills" >
 			<li class="nav-item" 
 			th:each="i : ${#numbers.sequence(0,data.totalPages-1)}">
-			<a th:href="@{/(page=${i})}" th:text="${i+1}" class="nav-link"></a>
+			<a th:href="@{/(page=${i})}" th:text="${i+1}" class="nav-link"
+			th:classappend="${currentPage}==${i}? 'active' : '' "></a>
 			</li>
 			</ul>
 		</div>
